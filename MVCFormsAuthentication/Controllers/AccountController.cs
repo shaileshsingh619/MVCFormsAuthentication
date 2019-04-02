@@ -11,6 +11,7 @@ namespace MVCFormsAuthentication.Controllers
     public class AccountController : Controller
     {
         // GET: Account
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
@@ -34,6 +35,7 @@ namespace MVCFormsAuthentication.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         public ActionResult Signup()
         {
             return View();

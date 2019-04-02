@@ -10,7 +10,7 @@ using MVCFormsAuthentication;
 
 namespace MVCFormsAuthentication.Controllers
 {
-    [Authorize]
+   
     public class EmployeesController : Controller
     {
         private OfficeEntities db = new OfficeEntities();
@@ -114,6 +114,12 @@ namespace MVCFormsAuthentication.Controllers
             db.Employee.Remove(employee);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        [AllowAnonymous]
+        public ActionResult About()
+        {
+            return View();
         }
 
         protected override void Dispose(bool disposing)

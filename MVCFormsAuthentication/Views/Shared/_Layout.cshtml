@@ -23,6 +23,7 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Get list", "index", "Employees")</li>
                     <li>@Html.ActionLink("Create", "create", "Employees")</li>
+                    <li>@Html.ActionLink("About", "About", "Employees")</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li><a>Dear - @User.Identity.Name</a></li>
