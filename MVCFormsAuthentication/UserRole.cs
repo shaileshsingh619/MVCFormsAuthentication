@@ -12,19 +12,12 @@ namespace MVCFormsAuthentication
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class UserRole
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Users()
-        {
-            this.UserRole = new HashSet<UserRole>();
-        }
-    
         public int Id { get; set; }
-        public string Username { get; set; }
-        public string Password { get; set; }
+        public int UserId { get; set; }
+        public string Roles { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UserRole> UserRole { get; set; }
+        public virtual Users Users { get; set; }
     }
 }

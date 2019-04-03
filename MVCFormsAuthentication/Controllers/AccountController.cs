@@ -17,6 +17,7 @@ namespace MVCFormsAuthentication.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Login(Models.Membership model)
         {
@@ -41,6 +42,7 @@ namespace MVCFormsAuthentication.Controllers
             return View();
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public ActionResult Signup(Users model)
         {

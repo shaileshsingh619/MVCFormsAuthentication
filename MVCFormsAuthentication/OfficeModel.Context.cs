@@ -27,7 +27,6 @@ namespace MVCFormsAuthentication
     
         public virtual DbSet<Employee> Employee { get; set; }
         public virtual DbSet<Users> Users { get; set; }
-
-        public System.Data.Entity.DbSet<MVCFormsAuthentication.Models.Membership> Memberships { get; set; }
+        public virtual DbSet<UserRole> UserRole { get; set; }
     }
 }

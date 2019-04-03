@@ -10,7 +10,7 @@ using MVCFormsAuthentication;
 
 namespace MVCFormsAuthentication.Controllers
 {
-   
+   [Authorize]
     public class EmployeesController : Controller
     {
         private OfficeEntities db = new OfficeEntities();
@@ -36,6 +36,7 @@ namespace MVCFormsAuthentication.Controllers
             return View(employee);
         }
 
+        [Authorize(Roles = "Admin, Customer")]
         // GET: Employees/Create
         public ActionResult Create()
         {
@@ -47,6 +48,7 @@ namespace MVCFormsAuthentication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Customer")]
         public ActionResult Create([Bind(Include = "Id,Name,Designation,Salary")] Employee employee)
         {
             if (ModelState.IsValid)
@@ -60,6 +62,7 @@ namespace MVCFormsAuthentication.Controllers
         }
 
         // GET: Employees/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -79,6 +82,7 @@ namespace MVCFormsAuthentication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Id,Name,Designation,Salary")] Employee employee)
         {
             if (ModelState.IsValid)
@@ -90,6 +94,7 @@ namespace MVCFormsAuthentication.Controllers
             return View(employee);
         }
 
+        [Authorize(Roles = "Admin")]
         // GET: Employees/Delete/5
         public ActionResult Delete(int? id)
         {
