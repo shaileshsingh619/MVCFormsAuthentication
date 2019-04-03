@@ -60,5 +60,11 @@ namespace MVCFormsAuthentication.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Login");
         }
+
+        [AllowAnonymous]
+        public ActionResult AccessDenied()
+        {
+            return View();
+        }
     }
 }

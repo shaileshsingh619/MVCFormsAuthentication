@@ -36,7 +36,7 @@ namespace MVCFormsAuthentication.Controllers
             return View(employee);
         }
 
-        [Authorize(Roles = "Admin, Customer")]
+        [CustomAuthorize(Roles = "Admin, Customer")]
         // GET: Employees/Create
         public ActionResult Create()
         {
