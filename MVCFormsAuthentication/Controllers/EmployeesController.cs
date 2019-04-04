@@ -10,7 +10,7 @@ using MVCFormsAuthentication;
 
 namespace MVCFormsAuthentication.Controllers
 {
-   [Authorize]
+   [CustomAuthorize]
     public class EmployeesController : Controller
     {
         private OfficeEntities db = new OfficeEntities();
@@ -94,7 +94,7 @@ namespace MVCFormsAuthentication.Controllers
             return View(employee);
         }
 
-        [Authorize(Roles = "Admin")]
+        [CustomAuthorize(Roles = "Admin")]
         // GET: Employees/Delete/5
         public ActionResult Delete(int? id)
         {
